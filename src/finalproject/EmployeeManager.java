@@ -101,16 +101,16 @@ public class EmployeeManager {
             br = new BufferedReader(fr);
             //line = br.readLine();
             while ((line = br.readLine()) != null) {
-                String[] lines = line.split("\\s+");
+                String[] lines2 = line.split("\\s+");
                 if (!line.contains("Salary") && !line.contains("Name")) {
-                    String name = lines[0].trim();
-                    String salary = lines[1].trim();
+                    String name = lines2[0].trim();
+                    String salary = lines2[1].trim();
                     Employee employee = new Employee(name, Integer.parseInt(salary));
                     EM.insertEmployee(employee);
                 }
             }
 
-            System.out.println("*** LIST OF ALL EMPLOYEES***");
+            System.out.println("*** SORTED EMPLOYEES LIST BASED ON THEIR SALARY***");
             EM.printResult();
 
             do {
